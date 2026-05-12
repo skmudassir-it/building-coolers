@@ -2,7 +2,14 @@ import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-dark">
+    <section
+      className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-dark bg-blend-overlay"
+      style={{
+        backgroundImage: "url('/images/building-exterior.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div

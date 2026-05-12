@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import CTABanner from "@/components/sections/CTABanner";
@@ -8,42 +9,42 @@ const projects = [
     location: "Memphis, TN",
     description:
       "Modular duct system with redundant cooling for a 12,000 sq ft Tier III data center. Delivered and commissioned in 3 weeks.",
-    gradient: "from-primary to-accent",
+    image: "finished-install.jpg",
   },
   {
     name: "Midtown Medical Offices",
     location: "Memphis, TN",
     description:
       "Movable cooling units for a multi-tenant medical building. Plug-and-play design allows rapid reconfiguration between tenants.",
-    gradient: "from-primary-light to-accent-light",
+    image: "technician-install.jpg",
   },
   {
     name: "Southaven Logistics Hub",
     location: "Southaven, MS",
     description:
       "Pre-fab roof-mounted cooling package for a 40,000 sq ft warehouse. Designed for quick installation during a tight holiday shutdown window.",
-    gradient: "from-accent to-cool",
+    image: "building-exterior.jpg",
   },
   {
     name: "Germantown Corporate HQ",
     location: "Germantown, TN",
     description:
       "Custom modular AHU solution integrated with existing building automation. Zero downtime during switchover.",
-    gradient: "from-cool to-primary-light",
+    image: "duct-fabrication.jpg",
   },
   {
     name: "Downtown Mixed-Use Tower",
     location: "Memphis, TN",
     description:
       "Floor-by-floor modular cooling for a 14-story mixed-use building. Each floor operates independently for maximum efficiency.",
-    gradient: "from-primary to-primary-light",
+    image: "facility-workshop.jpg",
   },
   {
     name: "Bartlett School District",
     location: "Bartlett, TN",
     description:
       "Movable cooling units for portable classrooms across 5 campuses. Quick deployment during summer renovation window.",
-    gradient: "from-accent-light to-cool",
+    image: "portable-ac-unit.jpg",
   },
 ];
 
@@ -68,23 +69,14 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
               <Card key={idx} hover className="p-0 overflow-hidden flex flex-col">
-                {/* Image placeholder with gradient */}
-                <div
-                  className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative`}
-                >
-                  <div className="absolute inset-0 opacity-20">
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle at 20px 20px, white 1px, transparent 0)",
-                        backgroundSize: "30px 30px",
-                      }}
-                    />
-                  </div>
-                  <span className="text-white/60 text-lg font-semibold tracking-wider">
-                    PROJECT IMAGE
-                  </span>
+                {/* Project Image */}
+                <div className="h-48 relative overflow-hidden">
+                  <Image
+                    src={`/images/${project.image}`}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 {/* Content */}

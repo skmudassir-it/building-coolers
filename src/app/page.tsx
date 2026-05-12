@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/sections/Hero";
 import ServicesOverview from "@/components/sections/ServicesOverview";
 import CTABanner from "@/components/sections/CTABanner";
@@ -109,7 +110,17 @@ export default function Home() {
             description="We do things differently — and that difference shows in every project we deliver."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+          <div className="mt-10">
+            <Image
+              src="/images/facility-workshop.jpg"
+              alt="Clean modern workshop with ductwork on workbenches"
+              width={1200}
+              height={600}
+              className="rounded-xl w-full object-cover max-h-80"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
             {whyChooseFeatures.map((feature) => (
               <Card key={feature.title} hover className="text-center">
                 <div className="w-14 h-14 bg-surface rounded-xl flex items-center justify-center mb-5 mx-auto">

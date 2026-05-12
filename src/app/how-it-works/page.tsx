@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
 
@@ -15,6 +16,8 @@ const steps = [
     title: "Fabrication",
     description:
       "Once the design is approved, our skilled technicians build your modular HVAC system in our Memphis fabrication facility. Every component is precision-cut, assembled, and quality-tested before it leaves the shop.",
+    image: "/images/facility-workshop.jpg",
+    imageAlt: "Clean modern workshop with ductwork on workbenches",
   },
   {
     number: 3,
@@ -22,6 +25,8 @@ const steps = [
     title: "Delivery",
     description:
       "We transport the pre-fabricated units directly to your site. Because the system is modular, transport is efficient and the units arrive ready for immediate installation — no on-site cutting or assembly required.",
+    image: "/images/delivery-truck.jpg",
+    imageAlt: "Truck with cooling units being unloaded",
   },
   {
     number: 4,
@@ -29,6 +34,8 @@ const steps = [
     title: "Installation",
     description:
       "Our certified installers connect, test, and commission your system on-site. We verify performance, walk you through operation, and ensure everything is running at peak efficiency before we hand over the keys.",
+    image: "/images/technician-install.jpg",
+    imageAlt: "Technician performing HVAC installation",
   },
 ];
 
@@ -79,6 +86,17 @@ export default function HowItWorksPage() {
                     <p className="text-text-light leading-relaxed text-base md:text-lg">
                       {step.description}
                     </p>
+                    {step.image && (
+                      <div className="mt-4">
+                        <Image
+                          src={step.image}
+                          alt={step.imageAlt || step.title}
+                          width={800}
+                          height={400}
+                          className="rounded-lg w-full object-cover max-h-64"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

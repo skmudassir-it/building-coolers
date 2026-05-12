@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -98,6 +99,13 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="bg-surface rounded-2xl p-10 border border-surface-dark">
+              <Image
+                src="/images/team-photo.jpg"
+                alt="Professional HVAC technicians reviewing blueprints"
+                width={600}
+                height={400}
+                className="rounded-xl w-full object-cover mb-8"
+              />
               <div className="space-y-8">
                 {[
                   { value: "15+", label: "Years in Business" },
@@ -197,6 +205,31 @@ export default function AboutPage() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Facility */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Our Facility"
+            title="Built in Memphis, Shipped Across the Region"
+            description="Our state-of-the-art fabrication facility is where precision meets productivity."
+          />
+          <div className="mt-10">
+            <Image
+              src="/images/factory-warehouse.jpg"
+              alt="Large warehouse with rows of prefab duct sections"
+              width={1200}
+              height={600}
+              className="rounded-xl w-full object-cover max-h-96"
+            />
+          </div>
+          <p className="mt-6 text-text-light leading-relaxed text-center max-w-3xl mx-auto">
+            From raw galvanized steel to finished modular cooling units, every step happens
+            under one roof. Controlled conditions mean consistent quality — no rain delays,
+            no jobsite compromises, just precision fabrication that ships ready to install.
+          </p>
         </div>
       </section>
 

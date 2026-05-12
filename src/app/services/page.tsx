@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -8,6 +9,7 @@ const services = [
     emoji: "🔧",
     title: "Modular Duct Fabrication",
     subtitle: "Precision-built in our Memphis shop, delivered ready to install.",
+    image: "duct-fabrication.jpg",
     description:
       "Our core service: custom duct systems fabricated in a controlled shop environment using premium materials and precision tooling. Every section is measured, cut, assembled, and tested before it ever leaves our facility. The result is a duct system that fits perfectly, installs in hours instead of days, and delivers superior airflow performance.",
     features: [
@@ -22,6 +24,7 @@ const services = [
     emoji: "❄️",
     title: "Movable Cooling Units",
     subtitle: "Plug-and-play AC that moves where you need it.",
+    image: "portable-ac-unit.jpg",
     description:
       "Our movable cooling units are a game-changer for commercial spaces. Factory-built and fully self-contained, these modular AC units are delivered to your site, positioned, and connected — with minimal disruption to your operations. Need to reconfigure your space next year? No problem: our units are designed to be relocated and reconnected without major construction.",
     features: [
@@ -36,6 +39,7 @@ const services = [
     emoji: "⚙️",
     title: "On-Site Installation",
     subtitle: "Certified teams, minimal downtime, full commissioning.",
+    image: "technician-install.jpg",
     description:
       "Fabrication is only half the equation. Our certified installation crews handle everything from delivery logistics to final testing. Because our components are pre-fabricated, on-site work is dramatically faster than traditional methods. Most installations are completed in 48 hours or less, and our teams are trained to work around your schedule to minimize business disruption.",
     features: [
@@ -102,14 +106,20 @@ export default function ServicesPage() {
                 i % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              {/* Icon / Visual */}
+              {/* Visual */}
               <div
                 className={`flex justify-center ${
                   i % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <div className="w-48 h-48 bg-surface rounded-3xl flex items-center justify-center border border-surface-dark shadow-inner">
-                  <span className="text-7xl">{service.emoji}</span>
+                <div className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-lg">
+                  <Image
+                    src={`/images/${service.image}`}
+                    alt={service.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
               </div>
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -108,6 +109,23 @@ export default function ProductsPage() {
               tooling and premium materials.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Hero Image Banner */}
+      <section className="relative w-full h-72 md:h-96 overflow-hidden">
+        <Image
+          src="/images/portable-ac-unit.jpg"
+          alt="Portable AC unit — our modular cooling product"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-8">
+          <p className="text-white text-lg md:text-xl font-medium max-w-2xl">
+            Factory-built cooling components that arrive ready to install
+          </p>
         </div>
       </section>
 
